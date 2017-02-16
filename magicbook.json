@@ -1,0 +1,28 @@
+{
+  "title" : "My Book",
+  "destination" : "build/:build",
+  "files" : [
+    "content/toc.html",
+    "content/first-chapter.md",
+    "content/second-chapter.html"
+  ],
+  "builds" : [
+    {
+      "format" : "pdf",
+      "layout" : "layouts/pdf.html",
+      "stylesheets" : {
+        "files" : ["stylesheets/pdf.scss"]
+      }
+    },
+    {
+      "format" : "html",
+      "layout" : "layouts/html.html",
+      "stylesheets" : {
+        "files" : ["stylesheets/html.scss"]
+      },
+      "javascripts" : {
+        "files" : ["javascripts/scripts.js"]
+      }
+    }
+  ]
+}

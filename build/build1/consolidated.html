@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Book</title>
+    
+    <link rel="stylesheet" href="assets/pdf.css">
+
+  </head>
+  <body data-type="book">
+    <nav data-type='toc'>
+  <h1>Table of Contents</h1>
+  <ol>
+<li>
+    <a data-toc="chapter" href="#markdown-chapter-4WbKTev">Markdown chapter</a>
+    <ol>
+<li>
+    <a data-toc="sect1" href="#internal-links-YlG0T2j">Internal links</a>
+  </li>
+<li>
+    <a data-toc="sect1" href="#images-5vqdTZW">Images</a>
+  </li>
+<li>
+    <a data-toc="sect1" href="#code-examples-2WK7TpW">Code examples</a>
+  </li>
+<li>
+    <a data-toc="sect1" href="#footnotes-RW2wT7v">Footnotes</a>
+  </li>
+  </ol>
+</li>
+<li>
+    <a data-toc="chapter" href="#html-chapter-8vy0FZP">HTML Chapter</a>
+  </li>
+  </ol>
+</nav>
+
+
+<section data-type="chapter" id="markdown-chapter-4WbKTev"><h1>Markdown chapter</h1>
+<p>This is a chapter written in markdown.</p>
+<section data-type="sect1" id="internal-links-YlG0T2j"><h1>Internal links</h1>
+<p>You can link to other files simply by making an internal <a href="#second-chapter-id" data-type="xref">link</a>. The build process will automatically search for this ID in all files, and append the filename if needed for the particular format.</p>
+</section><section data-type="sect1" id="images-5vqdTZW"><h1>Images</h1>
+<p>You can insert images simply by adding an image tag with the name of the image. This will look for an image located in <code>images/bruce.jpg</code>, but you can easily change this location if you want.</p>
+<p><img src="assets/bruce.jpg" alt="Picture of Bruce Springsteen"></p>
+</section><section data-type="sect1" id="code-examples-2WK7TpW"><h1>Code examples</h1>
+<p>Code examples can be written using the markdown syntax, and they
+will automatically be converted to HTMLBook programlistings. Here&apos;s an
+example of using the <code>console.log</code> function.</p>
+<pre data-type="programlisting" data-code-language="js"><code>console.log(&quot;hello&quot;);
+</code></pre>
+</section><section data-type="sect1" id="footnotes-RW2wT7v"><h1>Footnotes</h1>
+<p>You can also write footnotes using the Markdown syntax<span data-type="footnote"><a href="#fn1">1</a></span>, or the HTMLBook syntax<span data-type="footnote"><a href="#fn2">2</a></span>.</p>
+<p>Then you use the following <code>footnotes</code> liquid tag to insert the footnote references on the page. This is often done at the bottom of the page.</p>
+<ol data-type="footnotes">
+    <li id="fn1">They are great</li>
+    <li id="fn2">They are great too</li>
+</ol>
+
+</section></section>
+<section data-type="chapter" id="html-chapter-8vy0FZP">
+
+  <h1>HTML Chapter</h1>
+
+  <p id="second-chapter-id">This is a chapter written in HTML</p>
+
+
+</section>
+  </body>
+</html>
