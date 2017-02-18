@@ -1,4 +1,4 @@
-# esbook
+# elasticbyexample
  A book that teaches elasticsearch via interactive example programs.
  
  
