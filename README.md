@@ -1,5 +1,5 @@
 # elasticbyexample
- A book that teaches elasticsearch via interactive example programs.
+ A book that teaches elasticsearch via interactive examples.
  
  
 # About
