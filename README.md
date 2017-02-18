@@ -3,7 +3,7 @@
  
  
 # About
-  This **book** is a small set of tutorials for the quick reference of elasticsearch. The purpose is to make this book handy while working on elasticsearch. This book is useful to the beginners and intermediate level users.
+  This **book** is a small set of tutorials for the quick reference of elasticsearch. The purpose is to make this book handy while working on elasticsearch. It is useful to the beginners and intermediate level users.
 
  
 # Thanks
