@@ -6,7 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = esbook
 SOURCEDIR     = source
-BUILDDIR      = build
+BUILDDIR      = ../../book
 
 # Put it first so that "make" without argument is like "make help".
 help:
