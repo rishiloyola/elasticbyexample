@@ -1,5 +1,5 @@
 # esbook
- A site that teaches elasticsearch via interactive example programs.
+ A book that teaches elasticsearch via interactive example programs.
  
  
 # About
