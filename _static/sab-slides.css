@@ -1,0 +1,176 @@
+/**
+   This file is part of the slides-and-book Sphinx theme
+   by Pierre-Antoine Champin <http://champin.net/>
+**/
+
+/** This is the file to be used in the html slides.
+    It should be included in conf.py, using something like
+
+      slide_theme_options = {'custom_css': '../../_static/sab-slides.css'}
+
+    NB: the relative path might need adaptation.
+**/
+
+@import url("sab-common.css");
+
+@import url("http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700,700italic"); /* Archivo Narrow */
+
+article.slide {
+    font-family: "Archivo Narrow", sans-serif;
+}
+
+
+/* Customizing slides that introduce a new section */
+
+.slide.level-2 * {
+    text-align: right;
+}
+
+.slide.level-2 h2 {
+    text-align: left;
+    font-size: 150%;
+}
+
+.slide.level-2 h2+blockquote {
+    position: relative;
+    top: -15em;
+}
+
+
+/* Customizing "normal" slides content */
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow:         3px 3px 5px #bbb;
+}
+
+h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+h3, h4 {
+    font-size: 130%;
+    /* h3 differs by its darker colour */
+}
+
+h5 {
+    font-size: 120%;
+}
+
+h6 {
+    font-size: 110%:
+}
+
+.figure {
+    margin-top: 1.5em;
+}
+
+
+div.figure p.caption { /* override strange rules in default slide CSS */
+    position: static;
+    margin-top: 0.5ex;
+    font-size: 80%;
+}
+
+.note, .question {
+    border: 1px solid black;
+    background-color: LightYellow;
+    padding: 1ex 1em;
+    margin-top: 2em;
+}
+
+.admonition-title {
+    font-size: 66%;
+}
+
+.admonition-title+p {
+    margin-top: 5px;
+}
+
+div.topic.contents {
+    border: none;
+}
+
+a.reference {
+    text-decoration: none;
+}
+
+
+/* stacked animation in slides work with everything (not just img) */
+
+.build.animation.stacked > *:first-child {
+    position: relative; /* ensures that the parent reserves enough space */
+}
+
+.build.animation.stacked > * {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.build.animation.stacked > .figure {
+    /* fix figure attributes in the case of animations */
+    width: 100%;
+    margin: 0px;
+}
+
+.build.animation.stacked > .figure > .caption {
+    background-color: white; /* ensures opaque bg for figure captions */
+}
+
+.build.animation.stacked > p.graphviz {
+    /* override paragraph rule */
+    margin-top: 0px;
+    width: 100%;
+}
+
+
+/* floating elements */
+
+.float-right {
+    float: right;
+    padding-left: 1em;
+}
+
+
+/* better lists */
+
+.slide > ul {
+    margin: 0.25em 1em 0em 0.75em;
+}
+
+
+/* better highlighted code */
+
+table.highlighttable td {
+    border: none;
+}
+
+table.highlighttable td.linenos {
+    padding-right: 0;
+    text-align: right;
+}
+
+table.highlighttable td.linenos pre {
+    box-shadow: none;
+}
+
+
+/* smaller font in literal line blocks */
+
+.line-block .line .literal {
+    font-size: 80%;
+}
+
+.literal.code {
+    background-color: #EEE;
+}
+
+
+/* custom classes */
+
+.big > .highlight > pre, .big > pre {
+    max-height: 500px;
+    overflow: auto;
+}
+

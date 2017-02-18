@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &#8212; Elastic By Example</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="About this book" href="includeme.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Elastic By Example</span></a></h1>
+        <h2 class="heading"><span>Introduction</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="includeme.html">About this book</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Elasticsearch is a search engine based on Lucene. Its an open source, distributable, Scalable and schema-free full text search engine written in java. In Elasticsearch each indexed document is conceptually a JSON document. It is accessible from RESTful web service interface.</p>
+</div>
+<div class="section" id="use-case">
+<h1>Use case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h1>
+<p>Elasticsearch provides you inbuilt different different text matching algorithms. You can do full-text or partial-text matching with just typing small query. You need to type small mappings to analyse and organise your data before you start storing your data.</p>
+<p>One of the best use case of elasticsearch is to build your own search engine.  A commonly-requested feature in search applications is autocomplete or search suggestions. The key idea is to provide users instant suggestions based on different different parameters, while they are typing the queries. These parameters can be user’s search history, generally popular queries, top results, trending topics, spelling mistakes, etc.</p>
+<p>Suppose you have the data of checkins according to the city. You Want to build a search bar which will take city name as an input and provides you data of checkins. When the user enters full-text based queries any document based database is capable to give the perfectly matched documents. However, an autocomplete query will not contain complete words. As the user types “New York”, your search application might receive queries for “N”, “Ne”, “New”, “New ”,.. Etc. We need to implement separate mechanism which will analyze the stored data and will give you the similar outputs.</p>
+<p>To implement autocomplete like feature we can use prefix matching algorithm. Prefix algorithm works by looking for all terms in the index that match the given prefix. If there are a lot of terms in your index, this query can become quite unwieldy and eventually result in a “too many clauses” error. Also, the Prefix based search engine does not allow matching in the middle of words.
+Like, York query should match with New York data.</p>
+<p>The another approach is based on N-Grams. You can break your data and can store sub part of it. There are several tokenizers and token filters that come with elasticsearch that will break words up into n-grams.
+Like break New York into ‘N’, ‘e’, ‘w’, ‘Y’, ‘o’, ‘r’, ‘k’, ‘York’, ‘Ne’, ‘New’, ‘New ’.. Etc. tokens.
+N-grams allow matching in the middle of words at the cost of more tokens and a larger index.</p>
+<p>elasticsearch has a Multi Field type that supports indexing a field multiple ways. This handy feature can be used to index a field “normally(Full-text)” and also as n-grams.</p>
+<p>In this way Elasticsearch provides you a great way to implement search engines without an AI recommendation filter.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="includeme.html">About this book</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Rishi Shah.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.2.
+    </div>
+  </body>
+</html>

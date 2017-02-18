@@ -1,0 +1,63 @@
+/**
+   This file is part of the slides-and-book Sphinx theme
+   by Pierre-Antoine Champin <http://champin.net/>
+**/
+
+/** This file contains the common rules for slides and book.
+**/
+
+/* placeholder for custom css */
+@import url("sab-custom.css");
+
+/* ensures that stack-animated items can be positionned absolutely */
+
+.build.animation.stacked {
+    position: relative; 
+    padding: 0px;
+}
+
+
+/* figures and their caption should be centered */
+
+div.figure p.caption,
+div.figure {
+    text-align: center;
+}
+
+
+/* admonition */
+
+.admonition {
+    background-color: lightBlue;
+    border: 1px solid gray;
+}
+
+
+/* custom classes */
+
+.copyright {
+    font-size: 50%;
+}
+
+.del {
+    text-decoration: line-through;
+}
+
+.animation.opacify > * {
+    background-color: white;
+}
+
+
+/* custom roles
+   IMPORTANT: those require the use of .. role:: X in the RST files using them.
+   */
+
+/* deleted text*/
+.del {
+    text-decoration: line-through;
+}
+
+/* text in a foreign language */
+.eng, .fre {
+    font-style: italic;
+}

@@ -1,0 +1,126 @@
+/**
+   This file is part of the slides-and-book Sphinx theme
+   by Pierre-Antoine Champin <http://champin.net/>
+**/
+
+/** This is the file to be used in the html book.
+    It is automatically included by the theme.
+**/
+
+
+@import url("nature.css");
+@import url("sab-common.css");
+
+/* list-table used to layout 2 columns */
+
+table.docutils.columns td {
+    border-bottom-width: 0px;
+}
+
+
+/* floating images */
+
+/* COMMENTED OUT as the result is ugly
+.float-right {
+    float: right;
+    padding-left: 1em;
+}
+*/
+
+
+/* Limit size of %-sized figures (and graphviz) in html book */
+
+.figure, p.graphviz {
+    max-width: 35em; /* more consistent with slide-width for figure size */
+}
+
+p.graphviz > img {
+    width: auto;
+    max-width: 100%;
+}
+
+
+/* Handle slide-animations correctly in HTML book */
+
+/* NB1: this works for HTML only; LaTeX forces us to put animations in an
+   ifnonslides directive...
+   NB2: we only stack images; figure may have captions, so they are not stacked.
+ */
+
+.build.animation.stacked > img:first-child {
+    position: relative; /* ensures that the parent reserves enough space */
+}
+
+.build.animation.stacked > img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+}
+
+.build.animation > * {
+    border: 1px solid #AAA;
+    padding: 1ex;
+    margin: 1ex;
+}
+
+@media print {
+    body {
+        font-family: serif;
+    }
+
+    div.body .sab-printable h1,
+    div.body .sab-printable h2,
+    div.body .sab-printable h3,
+    div.body .sab-printable h4,
+    div.body .sab-printable h5,
+    div.body .sab-printable h6 {
+        font-family: serif;
+        font-weight: bold;
+        padding-left: 0px;
+        page-break-after: avoid;
+        background: none;
+        text-shadow: none;
+    }
+
+    div.body .sab-printable h1:first-child {
+        font-family: sans;
+        text-align: center;
+    }
+
+    .sab-printable h1 {
+        counter-reset: section-lvl2 section-lvl3;
+    }
+    .sab-printable h2 {
+        page-break-before: always;
+    }
+    .sab-printable h2:before {
+        counter-increment: section-lvl2;
+        content: "Partie " counter(section-lvl2) " : ";
+    }
+    .sab-printable h3 {
+        page-break-before: always;
+        counter-reset: section-lvl4;
+        border-top: 1.5px solid black;
+    }
+    .sab-printable h3:first-child {
+        page-break-before: avoid;
+    }
+    .sab-printable h3:before {
+        counter-increment: section-lvl3;
+        content: "Chapitre " counter(section-lvl3) " : ";
+    }
+    .sab-printable h4 {
+        counter-reset: section-lvl5;
+    }
+    .sab-printable h4:before {
+        counter-increment: section-lvl4;
+        content: counter(section-lvl3) "." counter(section-lvl4) ". ";
+    }
+    .sab-printable h5:before {
+        counter-increment: section-lvl5;
+        content: counter(section-lvl3) "."
+                 counter(section-lvl4) "."
+                 counter(section-lvl5)". ";
+    }
+}

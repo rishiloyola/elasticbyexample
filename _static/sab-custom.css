@@ -1,0 +1,7 @@
+/* If you want to add custom CSS rules,
+   create a file named sab-custom.css in your _static directory;
+   it will be automatically imported by sab-common.css.
+
+   This file is only provided to prevent that import to generate a spurious
+   error message in case you didn't override it.
+*/
