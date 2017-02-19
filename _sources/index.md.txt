@@ -9,5 +9,5 @@ Table of Contents
 .. toctree::
    :maxdepth: 2
 
-   About this book <about>
+   About this book <includeme>
    Introduction <introduction>

@@ -24,9 +24,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="About this book" href="includeme.html" /> 
+    <link rel="prev" title="About this book" href="about.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
@@ -36,7 +37,7 @@
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="includeme.html">About this book</a>
+        «&#160;&#160;<a href="about.html">About this book</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         </p>
@@ -46,21 +47,30 @@
         
         
   <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Elasticsearch is a search engine based on Lucene. Its an open source, distributable, Scalable and schema-free full text search engine written in java. In Elasticsearch each indexed document is conceptually a JSON document. It is accessible from RESTful web service interface.</p>
+<span id="introduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><strong>Elasticsearch</strong> is a search engine based on <a class="reference external" href="http://lucene.apache.org/core/">Lucene</a>. Its an open source, distributable, Scalable and schema-free full text search engine written in java. In Elasticsearch each indexed document is conceptually a JSON document and it can be accessible from RESTful web service interface.</p>
+<div style="background-color: #f2f2f2">
+ <b> what is lucene? </b>
+ <br>
+    Apache Lucene is a high-performance, full-featured text search engine library written entirely in Java. It provides reached searching algorithms like ranked searching, fielded searching, sorting by specific field, multiple-index searching etc.
 </div>
-<div class="section" id="use-case">
-<h1>Use case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h1>
-<p>Elasticsearch provides you inbuilt different different text matching algorithms. You can do full-text or partial-text matching with just typing small query. You need to type small mappings to analyse and organise your data before you start storing your data.</p>
-<p>One of the best use case of elasticsearch is to build your own search engine.  A commonly-requested feature in search applications is autocomplete or search suggestions. The key idea is to provide users instant suggestions based on different different parameters, while they are typing the queries. These parameters can be user’s search history, generally popular queries, top results, trending topics, spelling mistakes, etc.</p>
-<p>Suppose you have the data of checkins according to the city. You Want to build a search bar which will take city name as an input and provides you data of checkins. When the user enters full-text based queries any document based database is capable to give the perfectly matched documents. However, an autocomplete query will not contain complete words. As the user types “New York”, your search application might receive queries for “N”, “Ne”, “New”, “New ”,.. Etc. We need to implement separate mechanism which will analyze the stored data and will give you the similar outputs.</p>
-<p>To implement autocomplete like feature we can use prefix matching algorithm. Prefix algorithm works by looking for all terms in the index that match the given prefix. If there are a lot of terms in your index, this query can become quite unwieldy and eventually result in a “too many clauses” error. Also, the Prefix based search engine does not allow matching in the middle of words.
-Like, York query should match with New York data.</p>
-<p>The another approach is based on N-Grams. You can break your data and can store sub part of it. There are several tokenizers and token filters that come with elasticsearch that will break words up into n-grams.
+<br>
+<div style="background-color: #f2f2f2">
+    <b> what is schema-free database? </b>
+    <br>
+    A schema free DB is also known as NOSQL database. It can store data without a previous structure. There is no prefixed structure. You can alter is very easily and store any kind of data.
+</div><div class="section" id="use-case">
+<span id="use-case"></span><h2>Use case<a class="headerlink" href="#use-case" title="Permalink to this headline">¶</a></h2>
+<p>Elasticsearch provides you various types of inbuilt text matching algorithms. You can do full-text or partial-text matching with just typing small queries. You need to type small <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html">mappings</a> to analyse and organise your data before you start storing your data.</p>
+<p>One of the best use case of elasticsearch is to build your own search engine. A commonly-requested feature in search applications is <strong>autocomplete</strong> or <strong>search suggestions</strong>. The key idea is to provide users instant suggestions based on different parameters, while they are typing the queries. These parameters can be user’s <strong>search history</strong>, <strong>generally popular queries</strong>, <strong>top results</strong>, <strong>trending topics</strong>, <strong>spelling mistakes</strong>, etc.</p>
+<p>Suppose you have the data of checkins according to the city. You Want to build a search bar which will take city name as an input and provides you data of checkins. When the user enters full-text based queries any document based database is capable to give the perfectly matched documents. However, an autocomplete query will not contain complete words. As the user types New York, your search application might receive queries for N, Ne, New.. Etc. We need to implement separate mechanism which will analyze the stored data and will give you the similar outputs.</p>
+<p>To implement autocomplete like feature we can use <strong>prefix matching</strong> algorithm. Prefix algorithm works by looking for all terms in the index that match the given prefix. If there are a lot of terms in your index, this query can become quite <strong>unwieldy</strong> and eventually result in a <strong>too many clauses</strong> error. Also, the Prefix based search engine does not allow matching in the middle of words. <strong>Like</strong>, York query should match with New York data.</p>
+<p>The another approach is based on <strong>N-Grams</strong>. You can break your data and can store sub part of it. There are several tokenizers and token filters that come with elasticsearch that will break words up into n-grams.
 Like break New York into ‘N’, ‘e’, ‘w’, ‘Y’, ‘o’, ‘r’, ‘k’, ‘York’, ‘Ne’, ‘New’, ‘New ’.. Etc. tokens.
 N-grams allow matching in the middle of words at the cost of more tokens and a larger index.</p>
-<p>elasticsearch has a Multi Field type that supports indexing a field multiple ways. This handy feature can be used to index a field “normally(Full-text)” and also as n-grams.</p>
+<p>elasticsearch has a <strong>Multi Field</strong> type that supports indexing a field multiple ways. This handy feature can be used to index a field <strong>normally(Full-text)</strong> and also as n-grams.</p>
 <p>In this way Elasticsearch provides you a great way to implement search engines without an AI recommendation filter.</p>
+</div>
 </div>
 
 
@@ -68,7 +78,7 @@ N-grams allow matching in the middle of words at the cost of more tokens and a l
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="includeme.html">About this book</a>
+        «&#160;&#160;<a href="about.html">About this book</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         </p>

@@ -1,6 +1,5 @@
 Introduction
--------------
-
+============
 Elasticsearch is a search engine based on Lucene. Its an open source, distributable, Scalable and schema-free full text search engine written in java. In Elasticsearch each indexed document is conceptually a JSON document. It is accessible from RESTful web service interface.
 
 Use case
